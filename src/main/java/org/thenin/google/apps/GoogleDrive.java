@@ -13,11 +13,6 @@ import java.util.List;
  * Created by kguryanov on 6/18/2015.
  */
 public class GoogleDrive extends GenericGoogleApp {
-
-
-    By folderName = By.id(":3i.ie");
-    By buttonOK = By.name("ok");
-
     By folderContainer = By.xpath("//*[@id=\":1j.folder0\"]");
     By folderList = By.xpath("//*[@id=\":1j.folder0\"]/div/div[2]/div/div");
 
@@ -27,11 +22,6 @@ public class GoogleDrive extends GenericGoogleApp {
         this.LOGIN_TITLE = "Meet Google Drive – One place for all your files";
         driver.get("https://drive.google.com");
     }
-
-//    public LoginPage getLoginPage() {
-//        return null;
-//    }
-
 
     private void openNewFolder() {
         String selectAll = Keys.chord(Keys.SHIFT, "f");
@@ -63,7 +53,7 @@ public class GoogleDrive extends GenericGoogleApp {
 
 
     public List<WebElement> createFolder(String name) {
-        List<WebElement> oldList = driver.findElements(By.xpath("//*[@id=\":1j.folder0\"]/div/div[2]/div/div"));
+        List<WebElement> oldList = driver.findElements(folderList);
         int folderNumber = oldList.size();
         int timeout = 0;
 
@@ -71,12 +61,12 @@ public class GoogleDrive extends GenericGoogleApp {
         typeFolderName(name);
         confirmFolderCreation();
 
-        List<WebElement> newList = driver.findElements(By.xpath("//*[@id=\":1j.folder0\"]/div/div[2]/div/div"));
+        List<WebElement> newList = driver.findElements(folderList);
 
         while (!(newList.size() > folderNumber) && timeout < 10000) {
             try {
                 Thread.sleep(10);
-                newList = driver.findElements(By.xpath("//*[@id=\":1j.folder0\"]/div/div[2]/div/div"));
+                newList = driver.findElements(folderList);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -95,12 +85,6 @@ public class GoogleDrive extends GenericGoogleApp {
         }
 
         return  finalList;
-
     }
 
-
-    public WebElement findFolderContainer() {
-        return driver.findElement(folderContainer);
-
-    }
 }
