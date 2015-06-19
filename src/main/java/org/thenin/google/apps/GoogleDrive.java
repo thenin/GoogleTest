@@ -13,7 +13,6 @@ import java.util.List;
  * Created by kguryanov on 6/18/2015.
  */
 public class GoogleDrive extends GenericGoogleApp {
-    By folderContainer = By.xpath("//*[@id=\":1j.folder0\"]");
     By folderList = By.xpath("//*[@id=\":1j.folder0\"]/div/div[2]/div/div");
 
     public GoogleDrive(WebDriver driver) {
@@ -79,7 +78,6 @@ public class GoogleDrive extends GenericGoogleApp {
             for (WebElement newItem : newList) {
                 if (oldItem.getAttribute("data-id").equals(newItem.getAttribute("data-id"))) {
                     finalList.remove(newItem);
-                    continue;
                 }
             }
         }
