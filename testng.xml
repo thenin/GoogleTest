@@ -7,7 +7,6 @@
     <parameter name="firstName" value="Tester"/>
     <parameter name="lastName" value="Testerovich"/>
     <parameter name="folderName" value="unique!"/>
-    <parameter name="browser" value="chrome"/>
     <parameter name="driverExec" value="d://chromedriver.exe"/>
 
 
