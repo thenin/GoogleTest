@@ -11,6 +11,6 @@ DriveTest.java is hard-coded to tun on Google Chrome.
 
 
 Usage:
-1. git clone https://github.com/thenin/GoogleTest.git
-2. Edit testng.xml (at least provide correct path for ChromeDrover executable)
-3. mvn test
+ 1. git clone https://github.com/thenin/GoogleTest.git
+ 2. Edit testng.xml (at least provide correct path for ChromeDrover executable)
+ 3. mvn test
