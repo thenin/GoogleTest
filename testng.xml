@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1">
+    <parameter name="email" value="testerovixh@gmail.com"/>
+    <parameter name="password" value="Gfhjkm0912"/>
+    <parameter name="firstName" value="Tester"/>
+    <parameter name="lastName" value="Testerovich"/>
+    <parameter name="folderName" value="unique!"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="driverExec" value="d://chromedriver.exe"/>
+
+
+
+    <test name="LoginGmail">
+        <classes>
+            <class name="org.thenin.google.apps.GmailTest">
+            </class>
+        </classes>
+    </test>
+
+    <test name="TestDrive">
+        <classes>
+            <class name="org.thenin.google.apps.DriveTest">
+            </class>
+        </classes>
+
+    </test>
+</suite>
