@@ -25,7 +25,7 @@ public abstract class GenericGoogleApp {
     private final By settings = By.xpath("//*[@id=\"gb\"]/div[1]/div[1]/div[2]/div[4]/div[1]/a");
     private final By logOut = By.id("gb_71");
 
-    private By switchDrive = By.xpath("//*[@id=\"ogbkddg:6\"]/a");
+    private final By switchDrive = By.xpath("//*[@id=\"ogbkddg:6\"]/a");
 
 //    protected By switchGPlus = By.xpath("//*[@id=\"ogbkddg:0\"]/a");
 //    protected By switchSearch = By.xpath("//*[@id=\"ogbkddg:1\"]/a");
