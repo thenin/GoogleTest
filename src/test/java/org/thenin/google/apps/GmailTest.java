@@ -6,6 +6,11 @@ import org.testng.annotations.*;
 
 /**
  * Created by kguryanov on 6/18/2015.
+ * Simple test for gmail
+ * - login to gmail
+ * - check that login is successful
+ * - logout
+ * - validate logout successful
  */
 public class GmailTest {
     WebDriver driver;
@@ -22,7 +27,6 @@ public class GmailTest {
     public void LoginGmail(String email, String password, String firstName, String lastname){
 
         GoogleGmail gmailApp = (GoogleGmail) new GoogleGmail(driver).getLoginPage().loginAs(email, password);
-        String newString  = gmailApp.TITLE;
 
         gmailApp.selfTestTitle();
         gmailApp.selfTestUser(firstName);
