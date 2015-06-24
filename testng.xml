@@ -9,8 +9,6 @@
     <parameter name="folderName" value="unique!"/>
     <parameter name="driverExec" value="d://chromedriver.exe"/>
 
-
-
     <test name="LoginGmail">
         <classes>
             <class name="org.thenin.google.apps.GmailTest">
