@@ -1,3 +1,3 @@
 [submodule "SeleniumLauncherJ"]
 	path = SeleniumLauncherJ
-	url = git@github.com:thenin/SeleniumLauncherJ.git
+	url = https://github.com/thenin/SeleniumLauncherJ.git
