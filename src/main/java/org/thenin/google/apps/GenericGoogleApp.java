@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by kguryanov on 6/18/2015.
+ * Generic class for a Google Application
  */
 abstract class GenericGoogleApp {
     protected String TITLE;
@@ -24,15 +25,15 @@ abstract class GenericGoogleApp {
     protected By settings = By.xpath("//*[@id=\"gb\"]/div[1]/div[1]/div[2]/div[4]/div[1]/a");
     protected By logOut = By.id("gb_71");
 
-
-    protected By switchGPlus = By.xpath("//*[@id=\"ogbkddg:0\"]/a");
-    protected By switchSearch = By.xpath("//*[@id=\"ogbkddg:1\"]/a");
-    protected By switchYouTube = By.xpath("//*[@id=\"ogbkddg:2\"]/a");
-    protected By switchMaps = By.xpath("//*[@id=\"ogbkddg:3\"]/a");
-    protected By switchPlay = By.xpath("//*[@id=\"ogbkddg:4\"]/a");
-    protected By switchGmail = By.xpath("//*[@id=\"ogbkddg:5\"]/a");
     protected By switchDrive = By.xpath("//*[@id=\"ogbkddg:6\"]/a");
-    protected By switchCalendar = By.xpath("//*[@id=\"ogbkddg:7\"]/a");
+
+//    protected By switchGPlus = By.xpath("//*[@id=\"ogbkddg:0\"]/a");
+//    protected By switchSearch = By.xpath("//*[@id=\"ogbkddg:1\"]/a");
+//    protected By switchYouTube = By.xpath("//*[@id=\"ogbkddg:2\"]/a");
+//    protected By switchMaps = By.xpath("//*[@id=\"ogbkddg:3\"]/a");
+//    protected By switchPlay = By.xpath("//*[@id=\"ogbkddg:4\"]/a");
+//    protected By switchGmail = By.xpath("//*[@id=\"ogbkddg:5\"]/a");
+//    protected By switchCalendar = By.xpath("//*[@id=\"ogbkddg:7\"]/a");
 
 
     public GenericGoogleApp(WebDriver driver) {
