@@ -13,14 +13,14 @@
 
     <test name="LoginGmail">
         <classes>
-            <class name="org.thenin.google.apps.GmailTest">
+            <class name="org.thenin.google.apps.test.GmailTest">
             </class>
         </classes>
     </test>
 
     <test name="TestDrive">
         <classes>
-            <class name="org.thenin.google.apps.DriveTest">
+            <class name="org.thenin.google.apps.test.DriveTest">
             </class>
         </classes>
 

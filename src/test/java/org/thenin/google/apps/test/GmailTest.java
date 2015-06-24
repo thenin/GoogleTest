@@ -1,8 +1,10 @@
-package org.thenin.google.apps;
+package org.thenin.google.apps.test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
+import org.thenin.google.apps.GenericGoogleApp;
+import org.thenin.google.apps.GoogleGmail;
 
 /**
  * Created by kguryanov on 6/18/2015.
@@ -13,7 +15,7 @@ import org.testng.annotations.*;
  * - validate logout successful
  */
 public class GmailTest {
-    WebDriver driver;
+    private WebDriver driver;
 
 
     @BeforeTest
@@ -31,7 +33,7 @@ public class GmailTest {
         gmailApp.selfTestTitle();
         gmailApp.selfTestUser(firstName);
 
-        GoogleAccounts.LoginPage logoutResult = gmailApp.doLogOut();
+        GenericGoogleApp.LoginPage logoutResult = gmailApp.doLogOut();
         logoutResult.selfTestTitle();
 
     }

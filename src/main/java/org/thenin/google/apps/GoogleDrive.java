@@ -11,14 +11,16 @@ import java.util.List;
 
 /**
  * Created by kguryanov on 6/18/2015.
+ * PageObject class for Google Drive application
+ *
  */
 public class GoogleDrive extends GenericGoogleApp {
-    By folderList = By.xpath("//*[@id=\":1j.folder0\"]/div/div[2]/div/div");
+    final By folderList = By.xpath("//*[@id=\":1j.folder0\"]/div/div[2]/div/div");
 
     public GoogleDrive(WebDriver driver) {
         super(driver);
         this.TITLE = "My Drive - Google Drive";
-        this.LOGIN_TITLE = "Meet Google Drive – One place for all your files";
+        this.LOGIN_TITLE = "Meet Google Drive ï¿½ One place for all your files";
         driver.get("https://drive.google.com");
     }
 

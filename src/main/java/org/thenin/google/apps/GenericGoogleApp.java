@@ -13,19 +13,19 @@ import java.util.concurrent.TimeUnit;
  * Created by kguryanov on 6/18/2015.
  * Generic class for a Google Application
  */
-abstract class GenericGoogleApp {
-    protected String TITLE;
-    protected String LOGIN_TITLE;
-    protected String email;
-    protected final WebDriver driver;
+public abstract class GenericGoogleApp {
+    String TITLE;
+    String LOGIN_TITLE;
+    private String email;
+    final WebDriver driver;
 
-    protected By accountName = By.xpath("//*[@id=\"gb\"]/div[1]/div[1]/div[1]/div/span");
-    protected By apps = By.xpath("//*[@id=\"gbwa\"]/div[1]/a");
-    protected By notifications = By.xpath("//*[@id=\"gb\"]/div[1]/div[1]/div[2]/div[3]/div[1]/a");
-    protected By settings = By.xpath("//*[@id=\"gb\"]/div[1]/div[1]/div[2]/div[4]/div[1]/a");
-    protected By logOut = By.id("gb_71");
+    private final By accountName = By.xpath("//*[@id=\"gb\"]/div[1]/div[1]/div[1]/div/span");
+    private final By apps = By.xpath("//*[@id=\"gbwa\"]/div[1]/a");
+    private final By notifications = By.xpath("//*[@id=\"gb\"]/div[1]/div[1]/div[2]/div[3]/div[1]/a");
+    private final By settings = By.xpath("//*[@id=\"gb\"]/div[1]/div[1]/div[2]/div[4]/div[1]/a");
+    private final By logOut = By.id("gb_71");
 
-    protected By switchDrive = By.xpath("//*[@id=\"ogbkddg:6\"]/a");
+    private By switchDrive = By.xpath("//*[@id=\"ogbkddg:6\"]/a");
 
 //    protected By switchGPlus = By.xpath("//*[@id=\"ogbkddg:0\"]/a");
 //    protected By switchSearch = By.xpath("//*[@id=\"ogbkddg:1\"]/a");
@@ -83,10 +83,10 @@ abstract class GenericGoogleApp {
     }
 
     public class LoginPage {
-        By email = By.id("Email");
-        By passwd = By.id("Passwd");
-        By nextButton = By.id("next");
-        By signinButton = By.id("signIn");
+        final By email = By.id("Email");
+        final By passwd = By.id("Passwd");
+        final By nextButton = By.id("next");
+        final By signinButton = By.id("signIn");
 
         protected void enterLogin(String login) {
             driver.findElement(email).sendKeys(login);
@@ -119,6 +119,10 @@ abstract class GenericGoogleApp {
             WebDriverWait wait = new WebDriverWait(driver, 90, 30);
             wait.until(ExpectedConditions.titleContains(TITLE));
             return GenericGoogleApp.this;
+        }
+
+        private void clickNotifications(){
+            driver.findElement(notifications).click();
         }
     }
 

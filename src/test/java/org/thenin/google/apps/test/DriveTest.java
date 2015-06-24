@@ -1,4 +1,4 @@
-package org.thenin.google.apps;
+package org.thenin.google.apps.test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,18 +6,27 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import org.thenin.google.apps.GoogleDrive;
+import org.thenin.google.apps.GoogleGmail;
 
 import java.util.List;
 
 /**
  * Created by kguryanov on 6/19/2015.
+ * Simple test for Google Drive
+ *  - Login to Gmail
+ *  - Open Google Drive application
+ *  - Validate Login
+ *  - Create new folder
+ *  - Check folder created
+ *  - Delete created folder
+ *  - Logout.
  */
 public class DriveTest {
-    GoogleGmail gmailApp;
-    GoogleDrive driveApp;
-    List<WebElement> newFolders = null;
+    private GoogleDrive driveApp;
+    private List<WebElement> newFolders = null;
 
-    WebDriver driver;
+    private WebDriver driver;
 
     @BeforeTest
     @Parameters({"driverExec"})
@@ -29,7 +38,7 @@ public class DriveTest {
     @BeforeMethod
     @Parameters({"email", "password", "firstName", "lastName"})
     public void doLogin(String email, String password, String firstName, String lastname){
-        gmailApp = (GoogleGmail) new GoogleGmail(driver).getLoginPage().loginAs(email, password);
+        GoogleGmail gmailApp = (GoogleGmail) new GoogleGmail(driver).getLoginPage().loginAs(email, password);
 
         gmailApp.selfTestTitle();
         gmailApp.selfTestUser(firstName);
