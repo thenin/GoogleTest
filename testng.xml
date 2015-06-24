@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Suite1">
-    <parameter name="email" value="testerovixh@gmail.com"/>
+    <parameter name="email" value="testerovich90@gmail.com"/>
     <parameter name="password" value="Gfhjkm0912"/>
     <parameter name="firstName" value="Tester"/>
     <parameter name="lastName" value="Testerovich"/>
